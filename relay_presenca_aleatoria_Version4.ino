@@ -1,22 +1,3 @@
-/*
-  Simulador de presença com controle de tempo por potenciômetro e LED "heartbeat",
-  agora mostrando continuamente a leitura do potenciômetro no Serial.
-
-  Requisitos:
-  - Relé no pino D8 alterna entre LIGADO e DESLIGADO por tempos aleatórios.
-  - Potenciômetro (100k no A0) regula a FAIXA de tempo:
-      * Pot no mínimo  -> aleatório entre 1 e 8 minutos
-      * Pot no máximo  -> aleatório entre 10 e 25 minutos
-    (valores intermediários interpolam linearmente entre essas faixas)
-  - LED de estado acende quando o relé está LIGADO (digital HIGH/LOW).
-  - LED "heartbeat" pisca continuamente para indicar que o circuito está ativo.
-  - Mostra no Serial a leitura do potenciômetro (ADC e %) e a faixa de minutos mapeada.
-
-  Observações:
-  - Usa millis() (sem delay) para manter o heartbeat e a telemetria do potenciômetro.
-  - Ajuste POT_ADC_MAX conforme a sua placa (UNO=1023, ESP32=4095).
-*/
-
 #ifndef D8
 #define D8 8
 #endif
